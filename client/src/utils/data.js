@@ -1,28 +1,28 @@
 import I1 from "../img/i1.png";
 import F1 from "../img/f1.png";
 import C3 from "../img/c3.png";
-import Fi1 from "../img/fi1.png";
+import jrice from "../img/jrice.jpg";
 
 export const heroData = [
   {
     id: 1,
     name: "Icecream",
     decp: "Chocolate & vanilla",
-    price: "5.25",
+    price: "3000",
     imageSrc: I1,
   },
   {
     id: 2,
     name: "Strawberries",
     decp: "Fresh Strawberries",
-    price: "10.25",
+    price: "5000",
     imageSrc: F1,
   },
   {
     id: 3,
     name: "Chicken Kebab",
     decp: "Mixed Kebab Plate",
-    price: "8.25",
+    price: "2500",
     imageSrc: C3,
   },
   {
@@ -30,7 +30,7 @@ export const heroData = [
     name: "Jollof Rice",
     decp: "African Rice plate",
     price: "1500",
-    imageSrc: Fi1,
+    imageSrc: jrice,
   },
 ];
 
@@ -71,4 +71,10 @@ export const categories = [
     name: "Soft Drinks",
     urlParamName: "drinks",
   },
+
+  {
+    id: 8,
+    name: "Local meals",
+    urlParamName: "Local",
+  }
 ];

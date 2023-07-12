@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { RiRefreshFill } from "react-icons/ri";
+import { Route, Routes } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import { motion } from "framer-motion";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 import EmptyCart from "../img/emptyCart.svg";
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
 
 const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
@@ -85,7 +88,7 @@ const CartContainer = () => {
             </div>
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-400 text-lg">Delivery</p>
-              <p className="text-gray-400 text-lg">₦ 2.5</p>
+              <p className="text-gray-400 text-lg">₦ 2000</p>
             </div>
 
             <div className="w-full border-b border-gray-600 my-2"></div>
@@ -93,7 +96,17 @@ const CartContainer = () => {
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-200 text-xl font-semibold">Total</p>
               <p className="text-gray-200 text-xl font-semibold">
-                ₦{tot + 2.5}
+                ₦{tot + 2000}
+              </p>
+            </div>
+
+            <div className="w-full flex items-center justify-between">
+            <p className="text-gray-200 text-xl font-semibold">
+              Address
+              <form>
+                <input type="text" id="address" name="address">
+                </input>
+              </form>
               </p>
             </div>
 
@@ -103,7 +116,13 @@ const CartContainer = () => {
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
               >
-                Check Out
+                <Link to={"/Checkout"}>
+                <li className="text-lg text-textColor hover:text-headingColor duration-100 
+                            cursor-pointer"
+                                onClick={(Checkout)}>
+                  Check Out
+                  </li>
+                  </Link>
               </motion.button>
             ) : (
               <motion.button

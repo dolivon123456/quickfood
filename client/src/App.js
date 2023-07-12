@@ -1,10 +1,21 @@
 import React, { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { CreateContainer, Header, MainContainer } from "./components";
 import { useStateValue } from "./context/StateProvider";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
+
+
+import Footer from "./components/Footer";
+
+import Menu from "./components/Menu";
+import Service from "./components/Service";
+import About from "./components/About";
+import Checkout from "./components/Checkout";
+
+
+
 
 const App = () => {
   const [{ foodItems }, dispatch] = useStateValue();
@@ -31,6 +42,11 @@ const App = () => {
           <Routes>
             <Route path="/*" element={<MainContainer />} />
             <Route path="/createItem" element={<CreateContainer />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Menu" element={<Menu />} />
+            <Route path="/Service" element={<Service />} />
+            <Route path="/Checkout" element={<Checkout />} />
+
           </Routes>
         </main>
       </div>

@@ -13,6 +13,24 @@ body{
 html,
 body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.spinner {
+    animation: spin infinite 5s linear;
+
+    /*You can increase or decrease the timer (5s) to 
+    increase or decrease the speed of the spinner*/
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @tailwind base;
