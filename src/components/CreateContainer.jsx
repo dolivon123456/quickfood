@@ -36,7 +36,7 @@ const CreateContainer = () => {
   const uploadImage = (e) => {
     setIsLoading(true);
     const imageFile = e.target.files[0];
-    const storageRef = ref(storage, `Images/₦{Date.now()}-₦{imageFile.name}`);
+    const storageRef = ref(storage, `Images/${Date.now()}-${imageFile.name}`);
     const uploadTask = uploadBytesResumable(storageRef, imageFile);
 
     uploadTask.on(
@@ -98,7 +98,7 @@ const CreateContainer = () => {
         }, 4000);
       } else {
         const data = {
-          id: `₦{Date.now()}`,
+          id: `${Date.now()}`,
           title: title,
           imageURL: imageAsset,
           category: category,
@@ -155,7 +155,7 @@ const CreateContainer = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className={`w-full p-2 rounded-lg text-center text-lg font-semibold ₦{
+            className={`w-full p-2 rounded-lg text-center text-lg font-semibold ${
               alertStatus === "danger"
                 ? "bg-red-400 text-red-800"
                 : "bg-emerald-400 text-emerald-800"

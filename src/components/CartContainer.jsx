@@ -104,7 +104,7 @@ const CartContainer = () => {
             <p className="text-gray-200 text-xl font-semibold">
               Address
               <form>
-                <input type="text" id="address" name="address">
+                <input type="text" id="address" name="address" className="w-full h-full text-sm bg-orange-100 text-textColor font-semibold">
                 </input>
               </form>
               </p>
