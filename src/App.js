@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { CreateContainer, Header, MainContainer } from "./components";
+import { CreateContainer, Header, MainContainer, Footer } from "./components";
 import { useStateValue } from "./context/StateProvider";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
 
-
-import Footer from "./components/Footer";
 
 import Menu from "./components/Menu";
 import Service from "./components/Service";
@@ -49,6 +47,7 @@ const App = () => {
 
           </Routes>
         </main>
+        <Footer />
       </div>
     </AnimatePresence>
   );
